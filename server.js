@@ -41,6 +41,8 @@ async function newPayoutReceived(payoutValue) {
 app.post('/data', (req, res) => {
   let { payout } = req.body;
 
+    console.log('📥 Received request:', req.body); // ✅ Add this line
+
   if (typeof payout === 'string' && payout.endsWith('x')) {
     const numericPayout = parseFloat(payout.replace('x', ''));
 
